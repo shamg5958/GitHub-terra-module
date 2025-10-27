@@ -7,7 +7,7 @@ resource "aws_instance" "ec2-instance" {
     ami = var.ami_id    # referring to ami_id variable
 #    instance_type = "t2.micro"
     instance_type = var.instance_type  # referring to instance_type variable
-    vpc_security_group_ids = [aws_security_group.mysg.id]
+    vpc_security_group_ids = [aws_security_group.default.id]
 }
 
 resource "aws_security_group" "mysg" {
