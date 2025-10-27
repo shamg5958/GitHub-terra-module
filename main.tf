@@ -10,10 +10,10 @@ resource "aws_instance" "ec2-instance" {
     vpc_security_group_ids = [aws_security_group.default.id]
 }
 
-resource "aws_security_group" "mysg" {
+resource "aws_security_group" "default" {
     name = "allow-ssh"
     description = "Allow ssh traffic"
-#    vpc_id = "vpc-3345b25a"   # VPC ID of my account's default vpc
+#    vpc_id = "vpc-08c090020d8bec0d4"   # VPC ID of my account's default vpc
     vpc_id = var.vpc_id   # referring to vpc_id variable
 
     ingress {
